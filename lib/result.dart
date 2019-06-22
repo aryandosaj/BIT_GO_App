@@ -7,14 +7,14 @@ import 'package:http/http.dart' as http;
 import 'package:bidirectional_scroll_view/bidirectional_scroll_view.dart';
 
 
-class Attendence extends StatefulWidget {
+class Result extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _Attendence();
+    return _Result();
   }
 }
 
-class _Attendence extends State<Attendence> {
+class _Result extends State<Result> {
   @override
   Widget build(BuildContext context) {
     return BidirectionalScrollViewPlugin(
@@ -63,9 +63,9 @@ class _Attendence extends State<Attendence> {
   }
 
   getData() async {
-    final attendanceDetailString = await read_data_storage();
-    Map<String, dynamic> attendanceDetail = await jsonDecode(attendanceDetailString);
-    print(attendanceDetail);
-    return attendanceDetail['Attendance'];
+    final resultDetailString = await read_data_storage();
+    Map<String, dynamic> resultDetail = await jsonDecode(resultDetailString);
+    print(resultDetail);
+    return resultDetail['Result'];
   }
 }

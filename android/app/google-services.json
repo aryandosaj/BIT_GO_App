@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "240447075680",
+    "firebase_url": "https://extended-cinema-243707.firebaseio.com",
+    "project_id": "extended-cinema-243707",
+    "storage_bucket": "extended-cinema-243707.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:240447075680:android:351f85043822f77a",
+        "android_client_info": {
+          "package_name": "com.example.bitgo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "240447075680-j9edrqblmpp2q6agne4k0k2k8r517a91.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bitgo",
+            "certificate_hash": "2d00b40fbccb7f746e2bfb87368dedbd54868e0e"
+          }
+        },
+        {
+          "client_id": "240447075680-ht7miucpoouul14i67alra4crb919iom.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdotrfWD4mS7aA97pLPasIpIs8xjfXIFc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "240447075680-ht7miucpoouul14i67alra4crb919iom.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

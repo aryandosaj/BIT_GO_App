@@ -1,20 +1,17 @@
 import 'dart:convert';
-
-import 'package:bitgo/storage.dart';
 import 'package:bitgo/update.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'package:bidirectional_scroll_view/bidirectional_scroll_view.dart';
 
 
-class Attendence extends StatefulWidget {
+class Examination extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _Attendence();
+    return _Examination();
   }
 }
 
-class _Attendence extends State<Attendence> {
+class _Examination extends State<Examination> {
   @override
   Widget build(BuildContext context) {
     return BidirectionalScrollViewPlugin(
@@ -63,9 +60,9 @@ class _Attendence extends State<Attendence> {
   }
 
   getData() async {
-    final attendanceDetailString = await read_data_storage();
-    Map<String, dynamic> attendanceDetail = await jsonDecode(attendanceDetailString);
-    print(attendanceDetail);
-    return attendanceDetail['Attendance'];
+    final examinationDetailString = await read_data_storage();
+    Map<String, dynamic> examinationDetail = await jsonDecode(examinationDetailString);
+    print(examinationDetail);
+    return examinationDetail['Examination'];
   }
 }

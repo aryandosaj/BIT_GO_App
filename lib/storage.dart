@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+import 'package:bitgo/update.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
@@ -19,9 +20,7 @@ Future<String> readstorage() async {
 
   try {
     print('File Reading : ');
-    // print(file.readAsStringSync());
-    String s = (file.readAsStringSync());;
-    // Map<String, String> contents = jsonDecode(file.readAsStringSync());
+    String s = (file.readAsStringSync());
     print('File Read Successful');
     return s;
   } catch (e) {
@@ -32,11 +31,12 @@ Future<String> readstorage() async {
   }
 }
 
-void writestorage({String pass, String roll}) async {
+Future<int> writestorage({String pass, String roll}) async {
   
   final file = await _localFile;
   Map<String, String> storage = {'Roll': roll, 'Password': pass};
-  file.writeAsString(jsonEncode(storage));
-  print("File Written");
-  return;
+  await file.writeAsString(jsonEncode(storage),flush: true);
+  await print("File Written");
+  // await write_data_storage(); 
+  return 1;
 }
