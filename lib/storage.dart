@@ -5,6 +5,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:convert';
+var defaultData = {'Roll':'XXXXXXXXX','Pass':'12345678'};
+
 Future<String> get _localPath async {
   final directory = await getApplicationDocumentsDirectory();
   return directory.path;
@@ -27,7 +29,7 @@ Future<String> readstorage() async {
     print('Exception Occured:');
     print(e);
     print('Returned Null');
-    return null;
+    return jsonEncode(defaultData);
   }
 }
 
@@ -36,7 +38,6 @@ Future<int> writestorage({String pass, String roll}) async {
   final file = await _localFile;
   Map<String, String> storage = {'Roll': roll, 'Password': pass};
   await file.writeAsString(jsonEncode(storage),flush: true);
-  await print("File Written");
-  // await write_data_storage(); 
+  await print("File Written"); 
   return 1;
 }

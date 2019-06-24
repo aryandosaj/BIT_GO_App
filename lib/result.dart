@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:bidirectional_scroll_view/bidirectional_scroll_view.dart';
 
-
 class Result extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -38,8 +37,15 @@ class _Result extends State<Result> {
           if (snapshot.data['message'] == '0')
             return DataTable(
                 columns: snapshot.data['heading']
-                    .map<DataColumn>(
-                        (name) => DataColumn(label: Text(name.toString())))
+                    .map<DataColumn>((name) => DataColumn(
+                            label: Text(
+                          name.toString(),
+                          style: TextStyle(
+                            color: Colors.blue[600],
+                            fontWeight: FontWeight.w700,
+                          ),
+                          textScaleFactor: 1.2,
+                        )))
                     .toList(),
                 rows: snapshot.data['body']
                     .map<DataRow>((entry) => DataRow(
@@ -49,21 +55,29 @@ class _Result extends State<Result> {
                     .toList());
           else
             return Container(
-            child: Card(
-              child: Text(
-                snapshot.data['message'],
-                textScaleFactor: 2.0,
+                child: Padding(
+              child: Column(
+                children: <Widget>[
+                  Icon(
+                    Icons.sentiment_dissatisfied,
+                    size: 100.0,
+                    color: Colors.grey,
+                  ),
+                  Text(
+                    snapshot.data['message'],
+                    textScaleFactor: 1,
+                  )
+                ],
               ),
-              margin: EdgeInsets.all(10.0),
-            ),
-          );
+              padding: EdgeInsets.symmetric(horizontal: 130.0, vertical: 80.0),
+            ));
         }
       },
     )));
   }
 
   getData() async {
-    final resultDetailString = await read_data_storage();
+    final resultDetailString = await readDataStorage();
     Map<String, dynamic> resultDetail = await jsonDecode(resultDetailString);
     print(resultDetail);
     return resultDetail['Result'];
