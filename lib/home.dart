@@ -17,7 +17,8 @@ class _Home extends State<Home> {
     
     return Container(
         decoration: BoxDecoration(
-          image: new DecorationImage(image: AssetImage('images/homepage.jpg')),
+          image: new DecorationImage(image: AssetImage('images/homepage.jpg'),fit: BoxFit.fill),
+
         ),
         child: Column(
           children: <Widget>[
