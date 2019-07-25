@@ -94,7 +94,7 @@ class Profile extends StatelessWidget {
                   else
                     Scaffold.of(context).showSnackBar(SnackBar(
                       content: Text(
-                          "Unable to Login. Check your Username or Password"),
+                          "Unable to Login.\nCheck your Username or Password"),
                     ));
                   print(roll);
                   print(pass);
