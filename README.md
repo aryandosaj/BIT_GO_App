@@ -1,16 +1,25 @@
-# bitgo
+# BIT GO
 
-A new Flutter project.
+BIT GO is a flutter app that tells the attendance, internal results, and final examination results. It helps the user in keeping track of attendance and marks. This app woks only for BIT Mesra students.
 
-## Getting Started
+## Installation
 
-This project is a starting point for a Flutter application.
+Install flutter using this [tutorial](https://flutter.dev/docs/get-started/install).
 
-A few resources to get you started if this is your first Flutter project:
+Connect your android or ios phone to PC and turn on usb debugging.
+You are ready to go.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Usage
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+![](readmeImages/home.jpg)
+
+![](readmeImages/login)
+
+![](readmeImages/navigate.png)
+
+![](readmeImages/Result.png)
+
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
